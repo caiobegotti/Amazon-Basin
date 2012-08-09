@@ -21,7 +21,7 @@ urls = (
 )
 
 form = form.Form(
-    form.Textbox('get',
+    form.Textbox('search',
                  form.notnull,
                  description='',
                  size='50'
@@ -32,26 +32,42 @@ app = web.application(urls, globals(), True)
 class index:        
     def GET(self, term):
         res = web.input()
-        if res:
-            s = Search(res['get'], country='us')
-            wishlist = s.list()[0][1]
-
-            p = Profile(wishlist, country='us')
-            info = p.basicInfo()          
-            
-            wl = Wishlist(wishlist, country='us')
-            total = wl.total_expenses()
-            covers = wl.covers()
-            urls = wl.urls()
-            titles = wl.titles()
-            authors = wl.authors()
-            prices = wl.prices()
-            items = zip(covers, urls, titles, authors, prices)
-
-            return render.result(s.list(), total, info, items, wl.currency)
+        if len(res) == 0:
+            f = form()
+            return render.form(f)
+        if 'search' in res:
+            wl = []
+            p = []
+            term = res['search']
+            s = Search(term, country='us')
+            if len(s.list()) > 0:
+                wishlist = s.list()[0][1]
+                wl = Wishlist(wishlist, country='us')
+                p = Profile(wishlist, country='us')
+            else:
+                print 'NOT FOUND! 404: ' + term
+        elif 'list' in res:
+            id = res['list']
+            wl = Wishlist(id, country='us')
+            p = Profile(id, country='us')
         else:
             f = form()
             return render.form(f)
+
+        info = p.basicInfo()          
+        total = wl.total_expenses()
+        covers = wl.covers()
+        urls = wl.urls()
+        titles = wl.titles()
+        authors = wl.authors()
+        prices = wl.prices()
+        items = zip(covers, urls, titles, authors, prices)
+            
+        listnames = p.wishlists()
+        listcodes = p.wishlistsDetails()[0]
+        listsizes = p.wishlistsDetails()[1]
+        lists = zip(listnames, listsizes, listcodes)
+        return render.result(lists, total, info, items, wl.currency)
 
 #web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
 

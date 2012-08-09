@@ -1,4 +1,4 @@
-$def with (search, total, info, items, currency)
+$def with (lists, total, info, items, currency)
 $code:
     def cut(string):
         string = string[2]
@@ -22,8 +22,12 @@ $code:
 
 <h2>Found...</h2>
 <div id='avatar' style='background-image: url("$avatar(info)");'></div>
-$for row in search:
-    <p>User $row[0] with wishlist $row[1] worth $total bucks.</p>
+
+<p>Lists found:</p>
+<ul>
+$for row in lists:
+    <li><a href='?list=$row[2]'>$row[0]</a>, with $row[1] items and code $row[2].</li>
+</ul>
 
 <h3>Whose content is...</h3>
 <input id="livefilter-input" type="text" value="">
@@ -44,3 +48,5 @@ $for row in search:
         </tr>
     </tbody>
 </table>
+
+<p>This wishlist is worth $total in $currency!</p>
