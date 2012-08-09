@@ -1,7 +1,19 @@
 $def with (form)
 <div id="form">
 	<p>Type an e-mail or combo of first and last name, and hit enter</p>
-	<form name="search" method="GET" action="">$:form.render()</form>
+	<form name="search" method="GET" action="">
+		$:form.render()
+		<label><input class'radios' type="radio" name="site" value="us" checked="checked"><div class='flag' id='us'></div></label>
+		<label><input class'radios' type="radio" name="site" value="uk"><div class='flag' id='uk'></div></label>
+		<label><input class'radios' type="radio" name="site" value="ca"><div class='flag' id='ca'></div></label>
+		<label><input class'radios' type="radio" name="site" value="de"><div class='flag' id='de'></div></label>
+		<label><input class'radios' type="radio" name="site" value="it"><div class='flag' id='it'></div></label>
+		<label><input class'radios' type="radio" name="site" value="es"><div class='flag' id='es'></div></label>
+		<label><input class'radios' type="radio" name="site" value="fr"><div class='flag' id='fr'></div></label>
+		<label><input class'radios' type="radio" name="site" value="jp"><div class='flag' id='jp'></div></label>
+		<label><input class'radios' type="radio" name="site" value="cn"><div class='flag' id='cn'></div></label>
+		<label><input class'radios' type="radio" name="site" value="br"><div class='flag' id='br'></div></label>
+	</form>
 </div>
 
 <script type="text/javascript">document.search.search.focus();</script>

@@ -54,7 +54,7 @@ em {
 }
 
 em {
-	font-size: 200%;
+	font-size: 150%;
 	font-family: 'Just Me Again Down Here', cursive;
 }
 
@@ -127,4 +127,39 @@ nav, header {
 
 tr:hover > td:nth-child(1) > div {
 	border: 1px solid black;
+}
+
+.flag {
+	width: 16px;
+	height: 11px;
+	background: url('flags.png') no-repeat;
+	display: inline-block;
+	border: 5px solid white;
+}
+
+input[type="radio"]:checked+div {
+	border: 5px solid #F0F0F0;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+#br {background-position: -16px 0}
+#ca {background-position: -32px 0}
+#cn {background-position: -48px 0}
+#de {background-position: 0 -11px}
+#es {background-position: -16px -11px}
+#fr {background-position: -32px -11px}
+#uk {background-position: -48px -11px}
+#it {background-position: 0 -22px}
+#jp {background-position: -16px -22px}
+#us {background-position: -32px -22px}
+
+#search {
+	border: 0px;
+	border-bottom: 1px solid #000000;
+	font-size: 200%;
+	padding: 0px;
+	margin: 0px;
 }

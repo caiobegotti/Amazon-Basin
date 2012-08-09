@@ -24,7 +24,7 @@ form = form.Form(
     form.Textbox('search',
                  form.notnull,
                  description='',
-                 size='50'
+                 size='25'
                  ))
 
 app = web.application(urls, globals(), True)
@@ -35,21 +35,26 @@ class index:
         if len(res) == 0:
             f = form()
             return render.form(f)
+
+        site = 'us'
+        if 'site' in res:
+            site = res['site']
+
         if 'search' in res:
             wl = []
             p = []
             term = res['search']
-            s = Search(term, country='us')
+            s = Search(term, country=site)
             if len(s.list()) > 0:
                 wishlist = s.list()[0][1]
-                wl = Wishlist(wishlist, country='us')
-                p = Profile(wishlist, country='us')
+                wl = Wishlist(wishlist, country=site)
+                p = Profile(wishlist, country=site)
             else:
                 print 'NOT FOUND! 404: ' + term
         elif 'list' in res:
             id = res['list']
-            wl = Wishlist(id, country='us')
-            p = Profile(id, country='us')
+            wl = Wishlist(id, country=site)
+            p = Profile(id, country=site)
         else:
             f = form()
             return render.form(f)
