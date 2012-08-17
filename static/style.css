@@ -58,7 +58,8 @@ em {
 	font-family: 'Just Me Again Down Here', cursive;
 }
 
-tr:hover > td:nth-child(2), tr:hover > td:nth-child(2) > cite {
+table#livefilter-list > tbody > tr:hover > td:nth-child(2),
+table#livefilter-list > tbody > tr:hover > td:nth-child(2) > cite {
 	color: #000000;
 	background-color: #F5F5F5;
 	border-radius: 20px;
@@ -162,4 +163,8 @@ input[type="radio"] {
 	font-size: 200%;
 	padding: 0px;
 	margin: 0px;
+}
+
+input:focus, select:focus, textarea:focus {
+	outline: none;
 }
