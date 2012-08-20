@@ -3,6 +3,9 @@
 # Copyright (C) 2012 - Caio Begotti <caio1982@gmail.com>
 # Distributed under the GPLv2, see the LICENSE file.
 
+#import sys
+#sys.path.append('/home/caio/py_libs/')
+
 import web
 
 from amazonwish.config import *
