@@ -1,4 +1,4 @@
-$def with (lists, total, info, items, currency, domain)
+$def with (info, configs, lists, items, total)
 $code:
     def cut(string):
         string = string[2]
@@ -36,7 +36,7 @@ $for row in lists:
         <tr>
             <th></th>
             <th><a href="#" onclick="sortTable(1); return false;">Title</a></th>
-            <th><a href="#" onclick="sortTable(2); return false;">Price ($currency)</a></th>
+            <th><a href="#" onclick="sortTable(2); return false;">Price ($configs[0])</a></th>
         </tr>
     </thead>
     <tbody>
@@ -49,4 +49,4 @@ $for row in lists:
     </tbody>
 </table>
 
-<p>This wishlist is worth $total in $currency!</p>
+<p>This wishlist is worth $configs[1]$total in $configs[0]!</p>

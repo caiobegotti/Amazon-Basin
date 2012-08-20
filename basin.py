@@ -60,7 +60,8 @@ class index:
         listcodes = p.wishlistsDetails()[0]
         listsizes = p.wishlistsDetails()[1]
         lists = zip(listnames, listsizes, listcodes)
-        return render.result(lists, total, info, items, wl.currency, wl.domain)
+        configs = zip(wl.currency, wl.symbol, wl.domain)
+        return render.result(info, configs, lists, items, total)
 
 #web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
 
