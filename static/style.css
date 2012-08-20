@@ -6,7 +6,7 @@ body {
 
 footer {
 	padding: 2.5%;
-	margin: 10% 10% 0% 10%;
+	margin: 0% 10% 0% 10%;
 	font-size: 50%;
 	text-align: center;
 	border-top: 1px solid #F0F0F0;
@@ -30,9 +30,9 @@ cite {
 }
 
 #livefilter-list {
-	border-collapse: collapse;
 	margin-left: auto;
 	margin-right: auto;
+	border-collapse: collapse;
 }
 
 body, h1, tr, td, tbody, thead, table, #search {
@@ -160,4 +160,19 @@ input:focus, select:focus, textarea:focus {
 #form {
 	text-align: center;
 	width: 50%;
+}
+
+p#total > em {
+	font-size: 500%;
+	color: #6F2C70;
+	vertical-align: middle;
+	text-align: right;
+}
+
+p#total {
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 1px dashed #CCCCCC;
+	text-align: right;
+	width: 80%;
 }
