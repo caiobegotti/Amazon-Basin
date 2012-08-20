@@ -12,12 +12,14 @@ footer {
 	border-top: 1px solid #F0F0F0;
 }
 
-footer > p > a {
-	border-bottom: 1px dashed #CCCCCC;
+footer > p > a,
+ul > li > a {
+	border-bottom: 1px solid #007FFF;
 }
 
-footer > p > a:hover {
-	border-bottom: 1px solid #007FFF;
+footer > p > a:hover,
+ul > li > a:hover {
+	border-bottom: 1px solid #53BB4B;
 }
 
 cite {
