@@ -1,4 +1,4 @@
-$def with (lists, total, info, items, currency)
+$def with (lists, total, info, items, currency, domain)
 $code:
     def cut(string):
         string = string[2]
@@ -26,7 +26,7 @@ $code:
 <p>Lists found:</p>
 <ul>
 $for row in lists:
-    <li><a href='?list=$row[2]'>$row[0]</a>, with $row[1] items and code <a href='http://www.amazon.com/gp/registry/wishlist/$row[2]'>$row[2]</a>.</li>
+    <li><a href='?list=$row[2]'>$row[0]</a>, with $row[1] items and code <a href='http://amazon$domain/wishlist/$row[2]'>$row[2]</a>.</li>
 </ul>
 
 <h3>Whose content is...</h3>
