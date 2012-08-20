@@ -1,5 +1,7 @@
 body {
 	background: #FFFFFF url('basin-logo.png') no-repeat top right;
+	font-family: 'Quando', serif;
+	color: #000000;
 }
 
 footer {
@@ -65,27 +67,24 @@ td:first-child, td:last-child {
 	background: #FFFFFF;
 }
 
-body {
-	font-family: 'Quando', serif;
-	color: #000000;
-}
-
 h1 {
 	width: 555px;
 	height: 140px;
-	background-image: url('basin-name.png');
-	background-repeat: no-repeat;
 	margin-top: 2.5%;
+	background: #FFFFFF url('basin-name.png') no-repeat top left;
 }
 
-h1 > p, h1 > a {
+h1 > p, h1 > a, input[type="radio"] {
 	display: none;
 }
 
-.cover {
+.cover, #avatar {
 	background-size: 200%;
 	background-position: center center;
 	background-repeat: no-repeat;
+}
+
+.cover {
 	width: 32px;
 	height: 32px;
 	border: 1px solid transparent;
@@ -94,9 +93,6 @@ h1 > p, h1 > a {
 }
 
 #avatar {
-	background-size: 200%;
-	background-position: center center;
-	background-repeat: no-repeat;
 	border-radius: 20px;
 	border: 1px solid #000000;
 	box-shadow: 4px 4px 8px #CCCCCC;
@@ -129,15 +125,11 @@ tr:hover > td:nth-child(1) > div {
 	height: 11px;
 	background: url('flags.png') no-repeat;
 	display: inline-block;
-	border: 5px solid white;
+	border: 10px solid white;
 }
 
 input[type="radio"]:checked+div {
-	border: 5px solid #F0F0F0;
-}
-
-input[type="radio"] {
-	display: none;
+	border: 10px solid #F0F0F0;
 }
 
 #br {background-position: -16px 0}
@@ -154,6 +146,7 @@ input[type="radio"] {
 #search {
 	border: 0;
 	border-bottom: 1px solid #000000;
+	text-align: center;
 	font-size: 200%;
 }
 
