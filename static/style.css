@@ -6,8 +6,10 @@ body {
 
 footer {
 	padding: 2.5%;
+	margin: 10% 10% 0% 10%;
 	font-size: 50%;
 	text-align: center;
+	border-top: 1px solid #F0F0F0;
 }
 
 footer > p > a {
