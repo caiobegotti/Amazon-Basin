@@ -75,7 +75,7 @@ h1 {
 	width: 555px;
 	height: 140px;
 	margin-top: 2.5%;
-	background: #FFFFFF url('basin-name.png') no-repeat top left;
+	background: transparent url('basin-name.png') no-repeat top left;
 }
 
 h1 > p, h1 > a, input[type="radio"] {
@@ -98,7 +98,6 @@ h1 > p, h1 > a, input[type="radio"] {
 
 #avatar {
 	border-radius: 20px;
-	border: 1px solid #000000;
 	box-shadow: 4px 4px 8px #CCCCCC;
 	width: 100px;
 	height: 100px;
@@ -121,7 +120,7 @@ nav, header {
 }
 
 tr:hover > td:nth-child(1) > div {
-	border: 1px solid black;
+	border: 1px solid #000000;
 }
 
 .flag {
