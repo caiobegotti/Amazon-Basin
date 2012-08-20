@@ -3,10 +3,7 @@
 # Copyright (C) 2012 - Caio Begotti <caio1982@gmail.com>
 # Distributed under the GPLv2, see the LICENSE file.
 
-import re
-
 import web
-from web import form
 
 from amazonwish.config import *
 
@@ -20,21 +17,13 @@ urls = (
     '/(.*)', 'index'
 )
 
-form = form.Form(
-    form.Textbox('search',
-                 form.notnull,
-                 description='',
-                 size='25'
-                 ))
-
 app = web.application(urls, globals(), True)
 
 class index:        
     def GET(self, term):
         res = web.input()
         if len(res) == 0:
-            f = form()
-            return render.form(f)
+            return render.form()
 
         site = 'us'
         if 'site' in res:
@@ -56,8 +45,7 @@ class index:
             wl = Wishlist(id, country=site)
             p = Profile(id, country=site)
         else:
-            f = form()
-            return render.form(f)
+            return render.form()
 
         info = p.basicInfo()          
         total = wl.total_expenses()

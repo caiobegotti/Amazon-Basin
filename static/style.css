@@ -153,3 +153,8 @@ input[type="radio"]:checked+div {
 input:focus, select:focus, textarea:focus {
 	outline: none;
 }
+
+#form {
+	text-align: center;
+	width: 50%;
+}
