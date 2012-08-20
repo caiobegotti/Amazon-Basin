@@ -9,7 +9,6 @@ footer {
 	margin: 0% 10% 0% 10%;
 	font-size: 50%;
 	text-align: center;
-	border-top: 1px solid #F0F0F0;
 }
 
 footer > p > a,
@@ -69,6 +68,10 @@ table#livefilter-list > tbody > tr:hover > td:nth-child(2) > cite {
 
 td:first-child, td:last-child {
 	background: #FFFFFF;
+}
+
+table#livefilter-list > tbody > tr > td:nth-child(2) {
+	min-width: 750px;
 }
 
 h1 {
@@ -172,7 +175,12 @@ p#total > em {
 p#total {
 	margin-left: auto;
 	margin-right: auto;
-	border-top: 1px dashed #CCCCCC;
 	text-align: right;
-	width: 80%;
+	width: 85%;
+}
+
+p#total > em {
+	padding: 5px 20px 5px 20px;
+	border: 1px solid #F0F0F0;
+	border-radius: 20px;
 }
