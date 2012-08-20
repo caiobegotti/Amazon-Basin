@@ -1,14 +1,10 @@
 body {
-	background-image: url('basin-logo.png');
-	background-repeat: no-repeat;
-	background-position: top right;
-	padding: 0px;
-	margin: 0px;
+	background: #FFFFFF url('basin-logo.png') no-repeat top right;
 }
 
 footer {
 	padding: 2.5%;
-	font-size: 33;
+	font-size: 50%;
 	text-align: center;
 }
 
@@ -33,9 +29,9 @@ cite {
 	margin-right: auto;
 }
 
-tr, td, tbody, thead, table {
-	padding: 0px;
-	margin: 0px;
+body, h1, tr, td, tbody, thead, table, #search {
+	padding: 0;
+	margin: 0;
 }
 
 td {
@@ -50,7 +46,7 @@ em {
 	background: -o-radial-gradient(center, ellipse cover, #f1da36 0%,#ffffff 50%); /* Opera 12+ */
 	background: -ms-radial-gradient(center, ellipse cover, #f1da36 0%,#ffffff 50%); /* IE10+ */
 	background: radial-gradient(ellipse at center, #f1da36 0%,#ffffff 50%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#ffffff',GradientType=1); /* IE6-9 fallback on horizontal gradient */
 }
 
 em {
@@ -78,9 +74,7 @@ h1 {
 	width: 555px;
 	height: 140px;
 	background-image: url('basin-name.png');
-	backgroun-repeat: no-repeat;
-	margin: 0px;
-	padding: 0px;
+	background-repeat: no-repeat;
 	margin-top: 2.5%;
 }
 
@@ -158,11 +152,9 @@ input[type="radio"] {
 #us {background-position: -32px -22px}
 
 #search {
-	border: 0px;
+	border: 0;
 	border-bottom: 1px solid #000000;
 	font-size: 200%;
-	padding: 0px;
-	margin: 0px;
 }
 
 input:focus, select:focus, textarea:focus {
