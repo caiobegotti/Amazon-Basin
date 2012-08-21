@@ -1,0 +1,13 @@
+$def with (domain, multiples)
+$code:
+    def normalize(string):
+        return string.lower().title()
+
+<h2>Whoops, pick only one of these please!</h2>
+
+<p>Narrow down your search by clicking on some name below (top 25 shown):</p>
+
+<ul>
+$for row in multiples:
+    <li><a href='?list=$row[1]'>$normalize(row[0])</a> (ID <a href='http://amazon$domain/wishlist/$row[1]'>$row[1]</a>)</li>
+</ul>

@@ -37,12 +37,14 @@ class index:
             p = []
             term = res['search']
             s = Search(term, country=site)
-            if len(s.list()) > 0:
-                wishlist = s.list()[0][1]
+            if len(s.list()) > 1:
+                return render.multiples(s.domain, s.list())
+            elif len(s.list()) == 1:
+                wishlist = s.list()[1]
                 wl = Wishlist(wishlist, country=site)
                 p = Profile(wishlist, country=site)
             else:
-                print 'NOT FOUND! 404: ' + term
+                return render.error(term)
         elif 'list' in res:
             id = res['list']
             wl = Wishlist(id, country=site)
