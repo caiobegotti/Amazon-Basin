@@ -37,6 +37,10 @@ class index:
             p = []
             term = res['search']
             s = Search(term, country=site)
+
+            if s.list() is None:
+                return render.error('null')
+
             if len(s.list()) > 1:
                 return render.multiples(s.domain, s.list())
             elif len(s.list()) == 1:
@@ -60,7 +64,7 @@ class index:
         authors = wl.authors()
         prices = wl.prices()
         items = zip(covers, urls, titles, authors, prices)
-            
+
         listnames = p.wishlists()
         listcodes = p.wishlistsDetails()[0]
         listsizes = p.wishlistsDetails()[1]
