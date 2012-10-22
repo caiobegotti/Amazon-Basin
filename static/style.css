@@ -100,6 +100,7 @@ h1 > p, h1 > a, input[type="radio"] {
 }
 
 #avatar {
+	background-image: url('anonymous.png');
 	border-radius: 20px;
 	box-shadow: 4px 4px 8px #CCCCCC;
 	width: 100px;

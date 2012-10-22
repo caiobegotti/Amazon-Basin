@@ -16,12 +16,12 @@ $code:
             return string
     def avatar(string):
         if len(string) == 2:
-            return string[1]
+            return 'background-image: url(%s)' % string[1]
         else:
             return ''
 
-<h2>Found...</h2>
-<div id='avatar' style='background-image: url("$avatar(info)");'></div>
+<h2>User found!</h2>
+<div id='avatar' style="$avatar(info);"></div>
 
 <p>Lists found:</p>
 <ul>
