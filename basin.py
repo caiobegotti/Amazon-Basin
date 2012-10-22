@@ -44,7 +44,8 @@ class index:
             if len(s.list()) > 1:
                 return render.multiples(s.domain, s.list())
             elif len(s.list()) == 1:
-                wishlist = s.list()[1]
+                list = s.list()[0]
+                wishlist = list[1]
                 wl = Wishlist(wishlist, country=site)
                 p = Profile(wishlist, country=site)
             else:
