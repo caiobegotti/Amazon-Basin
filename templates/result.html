@@ -14,6 +14,8 @@ $code:
             return 'N/A'
         else:
             return string
+    def username(string):
+        return string[0]
     def avatar(string):
         if len(string) == 2:
             return 'background-image: url(%s)' % string[1]
@@ -21,16 +23,21 @@ $code:
             return ''
 
 <h2>User found!</h2>
-<div id='avatar' style="$avatar(info);"></div>
 
-<p>Lists found:</p>
-<ul>
-$for row in lists:
-    <li><a href='?list=$row[2]'>$row[0]</a> has $row[1] items, ID <a href='http://amazon$configs[2]/wishlist/$row[2]'>$row[2]</a>.</li>
-</ul>
+<div id='user-panel'>
+	<div id='user-panel-left'>
+		<div id='avatar' style="$avatar(info);"></div>
+	</div>
+	<div id='user-panel-right'>
+		<p>$username(info) owns:</p>
+		<ul>
+                $for row in lists:
+	  	    <li><a href='?list=$row[2]'>$row[0]</a> with $row[1] items, ID <a href='http://amazon$configs[2]/wishlist/$row[2]'>$row[2]</a>.</li>
+		</ul>
+	</div>
+</div>
 
-<h3>Whose content is...</h3>
-<input id="livefilter-input" type="text" value="">
+<h3>List content... &lt;<input id="livefilter-input" type="text" value="live filter here">&gt;</h3>
 <table id="livefilter-list">
     <thead>
         <tr>

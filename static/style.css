@@ -56,7 +56,8 @@ em {
 
 em {
 	font-size: 150%;
-	font-family: 'Just Me Again Down Here', cursive;
+	font-family: 'Vibur', cursive;
+	font-style: normal;
 }
 
 table#livefilter-list > tbody > tr:hover > td:nth-child(2),
@@ -172,7 +173,7 @@ input:focus, select:focus, textarea:focus {
 
 p#total > em {
 	font-size: 500%;
-	color: #6F2C70;
+	color: #004C99;
 	vertical-align: middle;
 	text-align: right;
 }
@@ -192,4 +193,30 @@ p#total > em {
 
 input {
 	font-family: 'Quando', serif;
+}
+
+#user-panel {
+	display: table;
+	width: 75%;
+}
+
+#user-panel-left {
+	width: 10%;
+	float: left;
+}
+
+#user-panel-right {
+	float: right;
+	width: 85%;
+}
+
+h3 {
+	margin: 50px;
+	text-align: center;
+	border-bottom: 1px solid #F0F0F0;
+}
+
+#livefilter-input {
+	text-align: center;
+	border: none;
 }
