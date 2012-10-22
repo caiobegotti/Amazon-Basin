@@ -1,0 +1,4 @@
+Options +ExecCGI 
+AddHandler fastcgi-script .py
+AddHandler cgi-script .py 
+DirectoryIndex basin.py/
