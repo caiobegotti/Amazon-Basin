@@ -134,6 +134,10 @@ tr:hover > td:nth-child(1) > div {
 	border: 10px solid white;
 }
 
+.flag:hover {
+	border: 10px solid #CCCCCC;
+}
+
 input[type="radio"]:checked+div {
 	border: 10px solid #F0F0F0;
 }
@@ -183,4 +187,8 @@ p#total > em {
 	padding: 5px 20px 5px 20px;
 	border: 1px solid #F0F0F0;
 	border-radius: 20px;
+}
+
+input {
+	font-family: 'Quando', serif;
 }
