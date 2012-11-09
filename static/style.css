@@ -128,32 +128,9 @@ tr:hover > td:nth-child(1) > div {
 	border: 1px solid #000000;
 }
 
-.flag {
-	width: 16px;
-	height: 11px;
-	background: url('flags.png') no-repeat;
-	display: inline-block;
-	border: 10px solid white;
-}
-
-.flag:hover {
-	border: 10px solid #CCCCCC;
-}
-
 input[type="radio"]:checked+div {
 	border: 10px solid #F0F0F0;
 }
-
-#br {background-position: -16px 0}
-#ca {background-position: -32px 0}
-#cn {background-position: -48px 0}
-#de {background-position: 0 -11px}
-#es {background-position: -16px -11px}
-#fr {background-position: -32px -11px}
-#uk {background-position: -48px -11px}
-#it {background-position: 0 -22px}
-#jp {background-position: -16px -22px}
-#us {background-position: -32px -22px}
 
 #search {
 	border: 0;
