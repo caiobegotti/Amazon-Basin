@@ -12,6 +12,15 @@
 	text-align: center;
 }
 
+h1 {
+	font-family: 'Caesar Dressing', cursive;
+	font-size: 125%;
+}
+
+h1 > small {
+	font-family: 'Quando', serif;
+}
+
 .basin-content {
 	width: 480px;
 }
