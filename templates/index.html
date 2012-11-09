@@ -1,0 +1,57 @@
+$def with (content)
+<!DOCTYPE HTML>
+<html lang="en">
+  
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Limelight%7CFlamenco%7CFedero%7CYesteryear%7CJosefin+Sans%7CSpinnaker%7CSansita+One%7CHandlee%7CDroid+Sans%7COswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/bootstrap-style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/fontawesome.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/famfamfam-flags.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/bootstrap-override.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="static/jquery-latest.min.js"></script>
+    <script src="static/bootstrap-button.js"></script>
+
+    <title>Search</title>
+    <link rel="shortcut icon" href="static/favicon.png" type="image/png" />
+
+    <meta charset="utf-8" />
+    <meta name="description" content="Your Amazon wishlists with a twist, easy to read and check its cash value." />
+    <meta name="keywords" content="Amazon, Wishlist, Books, Shopping, Cart, List, Wishes" />
+    <meta name="author" content="Caio Begotti <caio1982>" />
+    <meta name="viewport" content="width=device-width,user-scalable=no" />  
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+  </head>
+  
+  <body>
+    <div class="container-fluid container-fluid-1">
+      <div class="well">
+        <div class="page-header">
+          <h1>Basin <small>Amazon's wishlists visualization tool</small> 
+          </h1>
+        </div>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <ul class="nav">
+              <li class="divider"><a href="http://basin.ueberalles.net" class="a-1">View another<br></a>
+              </li>
+              <li class="divider"><a href="about" class="a-1">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      $:content
+    </div>
+    <div class="container-fluid">
+      <p class="p-1">© 2012 Caio Begotti (caio1982)</p>
+      <p class="p-1">See how it was made on Github!</p>
+    </div>
+  </body>
+
+</html>
