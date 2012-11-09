@@ -14,7 +14,7 @@ from amazonwish.amazonwish import Search
 from amazonwish.amazonwish import Profile
 from amazonwish.amazonwish import Wishlist
 
-render = web.template.render( 'templates/', base='layout')
+render = web.template.render( 'templates/', base='index')
 
 urls = (
     '/(.*)', 'index'
@@ -26,7 +26,7 @@ class index:
     def GET(self, term):
         res = web.input()
         if len(res) == 0:
-            return render.form()
+            return render.search()
 
         site = 'us'
         if 'site' in res:
@@ -55,7 +55,7 @@ class index:
             wl = Wishlist(id, country=site)
             p = Profile(id, country=site)
         else:
-            return render.form()
+            return render.search()
 
         info = p.basicInfo()          
         total = wl.total_expenses()
