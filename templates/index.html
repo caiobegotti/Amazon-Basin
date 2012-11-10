@@ -13,6 +13,11 @@ $def with (content)
     <link href="static/famfamfam-flags.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="static/bootstrap-override.css" media="screen" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="static/gh-fork-ribbon.css" />
+    <!--[if IE]>
+        <link rel="stylesheet" href="static/gh-fork-ribbon.ie.css" />
+    <![endif]-->
+
     <script src="static/jquery-latest.min.js"></script>
     <script src="static/bootstrap-button.js"></script>
     <script src="static/bootstrap-modal.js"></script>
@@ -50,28 +55,33 @@ $def with (content)
       </div>
     </div>
 
-    <div class="container basin-content">
+    <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+            <a href="#">Demo</a>
+        </div>
+    </div>
+
+    <div class="container basin-content" role="main">
       $:content
     </div>
 
-    <div class="container-fluid">
-      <p class="p-1">© 2012 Caio Begotti (caio1982)</p>
-      <p class="p-1"><a href="https://github.com/caio1982/Amazon-Basin">See how it was made on Github!</a></p>
+    <div class="container-fluid basin-footer">
+      <p class="p-1">© 2012 Caio Begotti (caio1982) — <a href="https://github.com/caio1982/Amazon-Basin">See how it was made on Github!</a></p>
     </div>
 
-  <div class="modal hide fade" id="about-modal">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h3>About</h3>
-    </div>
-    <div class="modal-body">
-      <p>Ever wondered how much your Amazon wishlist cost? No luck in sorting items by titles or prices? Hate their pagination? Then Basin is for you, as you can do all that (and more) with it :-)</p>
-      <p>In geek speak, this is a web.py implementation demo of my Python module Amazon-Wishlist, which you can find on Github by the way.</p>
-      <p class="pull-right"><a href="https://twitter.com/intent/tweet?screen_name=caio1982" class="twitter-mention-button" data-size="large" data-related="caio1982" data-dnt="true">Tweet to @caio1982</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="btn" data-dismiss="modal">Close</a>
-    </div>
+    <div class="modal hide fade" id="about-modal">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>About</h3>
+      </div>
+      <div class="modal-body">
+        <p>Ever wondered how much your Amazon wishlist cost? No luck in sorting items by titles or prices? Hate their pagination? Then Basin is for you, as you can do all that (and more) with it :-)</p>
+        <p>In geek speak, this is a web.py implementation demo of my Python module Amazon-Wishlist, which you can find on Github by the way.</p>
+        <p class="pull-right"><a href="https://twitter.com/intent/tweet?screen_name=caio1982" class="twitter-mention-button" data-size="large" data-related="caio1982" data-dnt="true">Tweet to @caio1982</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+      </div>
   </div>
 
   </body>

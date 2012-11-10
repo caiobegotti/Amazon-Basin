@@ -21,11 +21,23 @@ h1 > small {
 	font-family: 'Quando', serif;
 }
 
+.container[role="main"] {
+	padding-bottom: 60px;
+}
+
 .basin-content {
 	width: 750px;
 }
 
 .basin-search {
 	margin: 25px;
-	margin-bottom: 75px;
+}
+
+.basin-footer {
+	margin: 25px;
+	margin-top: 75px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
