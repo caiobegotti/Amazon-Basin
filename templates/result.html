@@ -15,26 +15,27 @@ $code:
         else:
             return string
     def username(string):
-        return string[0]
+        return string[0].title()
     def avatar(string):
         if len(string) == 2:
-            return 'background-image: url(%s)' % string[1]
+	    return 'background-image: url(%s) !important;' % (string[1])
         else:
             return ''
 
-<h2>User found!</h2>
+<h3>$username(info)</h3>
 
-<div id='user-panel'>
-	<div id='user-panel-left'>
-		<div id='avatar' style="$avatar(info);"></div>
-	</div>
-	<div id='user-panel-right'>
-		<p>$username(info) owns:</p>
-		<ul>
-                $for row in lists:
-	  	    <li><a href='?list=$row[2]'>$row[0]</a> with $row[1] items, ID <a href='http://amazon$configs[2]/wishlist/$row[2]'>$row[2]</a>.</li>
-		</ul>
-	</div>
+<div class="row-fluid"">
+  <div class="span2"">
+    <button class="active btn btn-large btn-primary" style="$avatar(info)">
+    </button>
+  </div>
+  <div class="span8">
+    <p>Lists:</p>
+    <ul>
+    $for row in lists:
+        <li><a href='?list=$row[2]'>$row[0]</a> with $row[1] items <a href='http://amazon$configs[2]/wishlist/$row[2]'><i class="icon-bookmark" title="Open this wishlist on Amazon"></i></a></li>
+    </ul>
+  </div>
 </div>
 
 <h3>List content... &lt;<input id="livefilter-input" type="text" value="live filter here">&gt;</h3>

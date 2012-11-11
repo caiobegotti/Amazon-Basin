@@ -25,6 +25,14 @@ h1 > small {
 	padding-bottom: 60px;
 }
 
+.btn-primary {
+	width: 100px;
+	height: 100px;
+	background-size: 200%;
+	background-position: center center;
+        background-image: url(anonymous.png) !important;
+}
+
 .basin-content {
 	width: 750px;
 }
