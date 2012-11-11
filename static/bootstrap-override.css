@@ -42,7 +42,8 @@ h1 > small {
 }
 
 .basin-footer {
-	margin: 25px;
+	background-color: #FFFFFF;
+	margin: 0px;
 	margin-top: 75px;
 	position: fixed;
 	bottom: 0;
