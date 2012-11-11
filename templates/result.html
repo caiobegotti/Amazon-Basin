@@ -38,7 +38,7 @@ $code:
 </div>
 
 <h3>&lt;<input id="livefilter-input" type="text" value="live filter here">&gt;</h3>
-<table class="table table-hover">
+<table class="table table-hover" id="livefilter-list">
     <thead>
         <tr>
             <th></th>
@@ -50,10 +50,10 @@ $code:
     $for row in items:
         <tr>
             <td><button class="active btn btn-large cover" style='background-image: url("$row[0]");'></button></td>
-            <td><a href="$row[1]">$cut(row)</a><span class="muted credits">$row[3]</span></td>
+            <td><a class="book-title" href="$row[1]">$cut(row)</a><span class="muted book-credits">$row[3]</span></td>
             <td><span class="badge badge-warning price-tag">$pricing(row)</span></td>
         </tr>
     </tbody>
 </table>
 
-<p class="pull-right">This wishlist is worth <span class="badge badge-important price-tag">$configs[1]$total</span></p>
+<p class="pull-right">This wishlist is worth <span class="badge badge-important price-total">$configs[1]$total</span></p>

@@ -50,12 +50,17 @@ h1 > small {
 }
 
 .price-total {
-	font-size: 300% !important;
+	margin-left: 10px;
+	font-size: 300%;
 }
 
-.credits {
+.book-credits {
 	display: block;
 	font-size: 50%;
+}
+
+.book-title {
+	font-size: 75%;
 }
 
 .basin-content {
