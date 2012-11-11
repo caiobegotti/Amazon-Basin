@@ -1,5 +1,3 @@
 $(function(){
-	$('#livefilter-list').liveFilter('#livefilter-input', 'tr', {
-		filterChildSelector: 'a'
-	});
+	$('#livefilter-list').liveFilter('#prependedInput', 'tr', {filterChildSelector: 'a'});
 });

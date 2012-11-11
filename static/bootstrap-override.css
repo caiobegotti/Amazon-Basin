@@ -63,6 +63,10 @@ h1 > small {
 	font-size: 75%;
 }
 
+table#livefilter-list {
+	margin-top: 50px;
+}
+
 .basin-content {
 	width: 750px;
 }
