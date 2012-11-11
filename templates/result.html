@@ -26,8 +26,7 @@ $code:
 
 <div class="row-fluid"">
   <div class="span2"">
-    <button class="active btn btn-large btn-primary" style="$avatar(info)">
-    </button>
+    <button class="active btn btn-large avatar" style="$avatar(info)"></button>
   </div>
   <div class="span8">
     <p>Lists:</p>
@@ -38,8 +37,8 @@ $code:
   </div>
 </div>
 
-<h3>List content... &lt;<input id="livefilter-input" type="text" value="live filter here">&gt;</h3>
-<table id="livefilter-list">
+<h3>&lt;<input id="livefilter-input" type="text" value="live filter here">&gt;</h3>
+<table class="table table-hover">
     <thead>
         <tr>
             <th></th>
@@ -50,11 +49,11 @@ $code:
     <tbody>
     $for row in items:
         <tr>
-            <td><div class='cover' style='background-image: url("$row[0]");'></div></td>
-            <td><a href="$row[1]">$cut(row)</a><cite>$row[3]</cite></td>
-            <td><em>$pricing(row)</em></td>
+            <td><button class="active btn btn-large cover" style='background-image: url("$row[0]");'></button></td>
+            <td><a href="$row[1]">$cut(row)</a><span class="muted credits">$row[3]</span></td>
+            <td><span class="badge badge-warning price-tag">$pricing(row)</span></td>
         </tr>
     </tbody>
 </table>
 
-<p id='total'>This wishlist is worth <em>$configs[1]$total</em></p>
+<p class="pull-right">This wishlist is worth <span class="badge badge-important price-tag">$configs[1]$total</span></p>

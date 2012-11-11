@@ -25,12 +25,37 @@ h1 > small {
 	padding-bottom: 60px;
 }
 
-.btn-primary {
-	width: 100px;
-	height: 100px;
+.avatar {
 	background-size: 200%;
 	background-position: center center;
         background-image: url(anonymous.png) !important;
+	width: 100px;
+	height: 100px;
+}
+
+.cover {
+	background-size: 150%;
+	background-position: center center;
+	width: 32px;
+	height: 32px;
+}
+
+.price-tag, .price-total {
+	font-family: 'Vibur', cursive;
+	font-style: normal;
+}
+
+.price-tag {
+	font-size: 100%;
+}
+
+.price-total {
+	font-size: 300% !important;
+}
+
+.credits {
+	display: block;
+	font-size: 50%;
 }
 
 .basin-content {
