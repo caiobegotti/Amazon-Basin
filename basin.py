@@ -42,7 +42,8 @@ class index:
                 return render.error('null')
 
             if len(s.list()) > 1:
-                return render.multiples(s.domain, s.list())
+                domain = s.domain.replace('.', '')
+                return render.multiples(domain, s.list())
             elif len(s.list()) == 1:
                 list = s.list()[0]
                 wishlist = list[1]

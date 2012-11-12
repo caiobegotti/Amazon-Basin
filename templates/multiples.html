@@ -10,5 +10,5 @@ $code:
 
 <ul>
 $for row in multiples:
-    <li><a href='?list=$row[1]'>$normalize(row[0])</a> (ID <a href='http://amazon$domain/wishlist/$row[1]'>$row[1]</a>)</li>
+    <li><a href='?list=$row[1]&site=$domain'>$normalize(row[0])</a> (ID <a href='http://amazon$domain/wishlist/$row[1]'>$row[1]</a>)</li>
 </ul>
