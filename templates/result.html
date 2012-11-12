@@ -37,12 +37,16 @@ $code:
   </div>
 </div>
 
-<div class="input-prepend">
-  <span class="add-on">Live filter <i class="icon-filter"></i></span>
-  <input class="span4" id="prependedInput" type="text" placeholder="Type parts of item titles here">
-</div>
+<div class="container-fluid basin-options">
+  <div class="input-prepend">
+    <span class="add-on">Live filter <i class="icon-filter"></i></span>
+    <input class="span4" id="prependedInput" type="text" placeholder="Type parts of item titles here">
+  </div>
 
-<p id="unavailable">Hide items without a price tag</p>
+  <div class="input-prepend">
+    <span class="add-on" onclick="filterList(); return false;"><i class="icon-eye-open"></i> Only show items that have a price tag</span>
+  </div>
+</div>
 
 <table class="table table-hover" id="livefilter-list">
     <thead>

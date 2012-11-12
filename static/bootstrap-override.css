@@ -63,8 +63,10 @@ h1 > small {
 	font-size: 75%;
 }
 
-table#livefilter-list {
-	margin-top: 50px;
+.basin-options {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding: 0px;
 }
 
 .basin-content {
