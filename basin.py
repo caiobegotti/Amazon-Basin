@@ -42,12 +42,11 @@ class index:
                 return render.error('null')
 
             if len(s.list()) > 1:
-                domain = s.domain.replace('.', '')
                 names = []
                 for l in s.list():
                     entry = l[0].lower().title(), l[1]
                     names.append(entry)
-                return render.multiples(domain, names)
+                return render.multiples(site, names)
             elif len(s.list()) == 1:
                 list = s.list()[0]
                 wishlist = list[1]
