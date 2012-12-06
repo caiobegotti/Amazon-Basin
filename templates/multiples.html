@@ -1,8 +1,4 @@
 $def with (domain, multiples)
-$code:
-    def normalize(string):
-        return string.lower().title()
-
 <div class="alert alert-block">
   <h3>Whoops, pick only one of these please!</h3>
   <p>Narrow down your search by clicking on some name below (top 25 shown):</p>
@@ -10,5 +6,5 @@ $code:
 
 <ul>
 $for row in multiples:
-    <li><a href='?list=$row[1]&site=$domain'>$normalize(row[0])</a> (ID <a href='http://amazon$domain/wishlist/$row[1]'>$row[1]</a>)</li>
+    <li><a href='?list=$row[1]&site=$domain'>$row[0]</a> (ID <a href='http://amazon$domain/wishlist/$row[1]'>$row[1]</a>)</li>
 </ul>
