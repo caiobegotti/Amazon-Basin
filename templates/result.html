@@ -1,4 +1,5 @@
 $def with (info, configs, lists, items, total)
+
 $code:
     def cut(string):
         string = string[2]
@@ -8,14 +9,17 @@ $code:
             return title + '...'
         else:
             return string
+
     def pricing(string):
         string = string[4]
         if len(string) == 0:
             return 'N/A'
         else:
             return string
+
     def username(string):
         return string[0].title()
+
     def avatar(string):
         if len(string) == 2:
 	    return 'background-image: url(%s) !important;' % (string[1])
