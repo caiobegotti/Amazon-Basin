@@ -8,11 +8,9 @@
 
 import web
 
-from amazonwish.config import *
-
-from amazonwish.amazonwish import Search
-from amazonwish.amazonwish import Profile
-from amazonwish.amazonwish import Wishlist
+from amazonwishlist import search
+from amazonwishlist import profile
+from amazonwishlist import wishlist
 
 render = web.template.render( 'templates/', base='index')
 
@@ -20,7 +18,11 @@ urls = (
     '/(.*)', 'index'
 )
 
+def internalerror():
+    return web.debugerror()
+
 app = web.application(urls, globals(), True)
+app.internalerror = internalerror
 
 class index:        
     def GET(self, term):
@@ -33,49 +35,49 @@ class index:
             site = res['site']
 
         if 'search' in res:
-            wl = []
-            p = []
+            wishlists = []
+            profiles = []
             term = res['search']
-            s = Search(term, country=site)
+            searched = search.Query(term, country=site)
 
-            if s.list() is None:
+            if searched.list() is None:
                 return render.error('null')
 
-            if len(s.list()) > 1:
+            if len(searched.list()) > 1:
                 names = []
-                for l in s.list():
-                    entry = l[0].lower().title(), l[1]
+                for item in searched.list():
+                    entry = item[0].lower().title(), item[1]
                     names.append(entry)
                 return render.multiples(site, names)
-            elif len(s.list()) == 1:
-                list = s.list()[0]
-                wishlist = list[1]
-                wl = Wishlist(wishlist, country=site)
-                p = Profile(wishlist, country=site)
+            elif len(searched.list()) == 1:
+                item = searched.list()[0]
+                wishlistid = item[1]
+                wishlistid = wishlist.Query(wishlistid, country=site)
+                profiles = profile.Query(wishlistid, country=site)
             else:
                 return render.error(term)
         elif 'list' in res:
-            id = res['list']
-            wl = Wishlist(id, country=site)
-            p = Profile(id, country=site)
+            username = res['list']
+            wishlists = wishlist.Query(username, country=site)
+            profiles = profile.Query(username, country=site)
         else:
             return render.search()
 
-        info = p.basicInfo()          
-        total = wl.total_expenses()
-        covers = wl.covers()
-        urls = wl.urls()
-        titles = wl.titles()
-        authors = wl.authors()
-        prices = wl.prices()
+        info = profiles.basic_info()          
+        total = wishlists.total_expenses()
+        covers = wishlists.covers()
+        urls = wishlists.urls()
+        titles = wishlists.titles()
+        authors = wishlists.authors()
+        prices = wishlists.prices()
         items = zip(covers, urls, titles, authors, prices)
 
-        listnames = p.wishlists()
-        listcodes = p.wishlistsDetails()[0]
-        listsizes = p.wishlistsDetails()[1]
+        listnames = profiles.wishlists()
+        listcodes = profiles.wishlists_details()[0]
+        listsizes = profiles.wishlists_details()[1]
         lists = zip(listnames, listsizes, listcodes)
         
-        configs = [wl.currency, wl.symbol, wl.domain]
+        configs = [wishlists.currency, wishlists.symbol, wishlists.domain]
         return render.result(info, configs, lists, items, total)
 
 #web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
